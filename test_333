@@ -1,0 +1,34 @@
+import pytest
+from Loto333 import Cart, PlayerComp, PlayerHuman, Game,
+
+# Теперь напишем тесты для сравнения объектов:
+
+def test_game_equality():
+    game1 = Game()
+    game2 = Game()
+    assert game1 == game2
+    game1.start()
+    assert game1 != game2
+
+def test_player_comp_equality():
+    player1 = PlayerComp()
+    player2 = PlayerComp()
+    assert player1 == player2
+    player1.step(42)
+    assert player1 != player2
+
+def test_player_human_equality():
+    player1 = PlayerHuman()
+    player2 = PlayerHuman()
+    assert player1 == player2
+    player1.step(42)
+    assert player1 != player2
+
+# Вызовите ваши тесты:
+if __name__ == '__main__':
+    game = Game()
+    print(game)  # Вывод строки, представляющей объект класса Game
+    game.start()
+    test_game_equality()
+    test_player_comp_equality()
+    test_player_human_equality()
